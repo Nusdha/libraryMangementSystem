@@ -1,5 +1,9 @@
 package com.example.service;
 
-public class AuthorService {
+import com.example.dto.AuthorSaveDTO;
+
+public interface AuthorService {
+
+    String addAuthor(AuthorSaveDTO authorSaveDTO);
 
 }
