@@ -55,7 +55,7 @@ public class MemberServiceImpl implements MemberService {
 
 // Delete a member by ID
     @Override
-    public void deleteMemberById(String id) {
+    public void deleteMemberById(String id) { 
         // Check if member exists before attempting deletion
         Optional<Member> existingMember = memberRepo.findById(id);
         if (existingMember.isPresent()) {
