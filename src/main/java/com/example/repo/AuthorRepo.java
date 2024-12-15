@@ -6,6 +6,8 @@ import com.example.entity.Author;
 
 public interface AuthorRepo extends MongoRepository<Author,Integer>{
 
+    Author getById(long author_id);
+
 }
 
 
