@@ -5,41 +5,41 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
-@Document(collection = "publiser")
+@Document(collection = "publisher")
 @Data
 
-public class publisher {
+public class Publisher {
     @Id
-    private long publiserId;
-    private String publiserName;
+    private long publisherId;
+    private String publisherName;
 
-    public void Publiser(int publiserId,String publiserName){
-        this.publiserId = publiserId;
-        this.publiserName = publiserName;
+    public Publisher(int publisherId,String publisherName){
+        this.publisherId = publisherId;
+        this.publisherName = publisherName;
     }
 
-    public void Publiser(String publiserName){
-        this.publiserName = publiserName;
+    public Publisher(String publisherName){ 
+        this.publisherName = publisherName;
     }
 
-    public long getPubliserId(){
-        return publiserId;
+    public long getPublisherId(){
+        return publisherId;
     }
 
-    public void setPubliserId(long publiserId){
-        this.publiserId =publiserId;
+    public void setPublisherId(long publisherId){
+        this.publisherId =publisherId;
     }
 
-    public String getAuthorName(){
-        return publiserName;
+    public String getPublisherName(){
+        return publisherName;
     }
 
-    public void setAuthorName(String publiserName){
-        this.publiserName = publiserName;
+    public void setPublisherName(String publisherName){
+        this.publisherName = publisherName;
     }
 
     @Override
     public String toString(){
-            return "Publiser{"+ "Publiser ID : " + publiserId +", Publiser Name :" + publiserName + '\'' + '}';
+            return "Publisher{"+ "Publishher ID : " + publisherId +", Publisher Name :" + publisherName + '\'' + '}';
     }
 }

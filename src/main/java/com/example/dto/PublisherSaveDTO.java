@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-
-public class PubliserDTO {
-    
-    private long publiserId;
-    private String publiserName;
+public class PublisherSaveDTO {
+    private String publisherName;
 }
+
