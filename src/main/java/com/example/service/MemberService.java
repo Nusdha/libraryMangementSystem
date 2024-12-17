@@ -1,18 +1,21 @@
 package com.example.service;
 
-import java.lang.reflect.Member;
+import com.example.entity.Member;
+import java.util.List; 
 import java.util.Optional;
 
 public interface MemberService {
-    Member saveMember(Member member);
-    Member addMember(Member member);
-
-    Member updateMember(String id, Member member);
-
-    Member extendMembership(String id);
+    Member createMember(Member member);
+    List<Member> getAllMember();
     Optional<Member> getMemberById(String id);
-
-    Optional<Member> findMemberByEmail(String email);
+    Member updateMember(String id, Member memberDetails);
+    void deleteMember(String id);
+    // Additional methods
     void deleteMemberById(String id);
-
+    Optional<Member> findMemberByEmail(String email);
+    void addMember(Member member);
+    void saveMember(Member member);
+    void extendMembership(String id);
 }
+
+
