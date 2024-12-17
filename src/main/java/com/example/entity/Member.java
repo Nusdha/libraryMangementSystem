@@ -93,7 +93,3 @@ public class Member {
        
 }
 
-
-    
-    
-             

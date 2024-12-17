@@ -1,11 +1,16 @@
 package com.example.service.impl;
 
+import java.util.List;
+
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.entity.Member;
 import com.example.repo.MemberRepo;
 import com.example.service.AuthorService;
+import com.example.service.MemberService;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -13,9 +18,8 @@ public class MemberServiceImpl implements MemberService {
     @Autowired
     private MemberRepo memberRepo;
 
-    // Save a new member
     @Override
-    public Member savemMember(Member member) {
+    public Member saveMember(Member member) {
         // Ensure member's ID is null before saving to prevent overwriting existing members.
         if (member.getId() != null) {
             throw new IllegalArgumentException("A new member cannot have an ID.");
@@ -23,32 +27,12 @@ public class MemberServiceImpl implements MemberService {
         return memberRepo.save(member);
     }
 
-    // Get a member by ID
     @Override
-    public Optional<Member> getMemberById(String id) {
-        // Optional will return null if the member doesn't exist
-        return memberRepo.findById(id);
+    public java.lang.reflect.Member addMember(java.lang.reflect.Member member) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addMember'");
     }
 
-    // Get all members
-    @Override
-    public List<Member> getAllMembers() {
-        return memberRepo.findAll();
-    }
-
-    // Delete a member by ID
-    @Override
-    public void deleteMember(String id) {
-        // Check if member exists before attempting deletion
-        Optional<Member> existingMember = memberRepo.findById(id);
-        if (existingMember.isPresent()) {
-            memberRepo.deleteById(id);
-        } else {
-            throw new IllegalArgumentException("Member with ID " + id + " does not exist.");
-        }
-    }
-
-    // Update member information
     @Override
     public Member updateMember(String id, Member member) {
         // Check if the member exists
@@ -61,6 +45,24 @@ public class MemberServiceImpl implements MemberService {
 
         // Save the updated member
         return memberRepo.save(member);
+    }
+
+    @Override
+    public java.lang.reflect.Member extendMembership(String id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'extendMembership'");
+    }
+
+// Delete a member by ID
+    @Override
+    public void deleteMemberById(String id) { 
+        // Check if member exists before attempting deletion
+        Optional<Member> existingMember = memberRepo.findById(id);
+        if (existingMember.isPresent()) {
+            memberRepo.deleteById(id);
+        } else {
+            throw new IllegalArgumentException("Member with ID " + id + " does not exist.");
+        }
     }
 }
 
